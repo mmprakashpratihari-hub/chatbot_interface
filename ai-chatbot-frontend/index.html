@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A clean AI chatbot frontend built with HTML, CSS and JavaScript.">
+  <title>Nova AI — Chat Assistant</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <span>nova<span class="brand-light">.ai</span></span>
+        <button class="icon-btn close-sidebar" id="closeSidebar" aria-label="Close menu">×</button>
+      </div>
+
+      <button class="new-chat-btn" id="newChatBtn"><span>＋</span> New chat</button>
+
+      <div class="side-label">YOUR SPACE</div>
+      <button class="nav-item active"><span>◷</span> Recent chats</button>
+      <button class="nav-item" id="clearHistoryBtn"><span>⌫</span> Clear history</button>
+
+      <div class="history-heading">RECENT</div>
+      <div class="history-list" id="historyList">
+        <div class="history-empty">Your conversations will appear here.</div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="profile-avatar">U</div>
+        <div class="profile-copy"><strong>Guest User</strong><small>Personal workspace</small></div>
+        <button class="icon-btn" title="Settings">⚙</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="model-name"><span class="status-dot"></span> Nova Assistant <span class="model-tag">Preview</span></div>
+        <button class="top-action" id="themeBtn" title="Toggle theme">◐ <span>Theme</span></button>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orb">✦</div>
+          <p class="eyebrow">YOUR AI COMPANION</p>
+          <h1>What can I help<br><span>you with today?</span></h1>
+          <p class="welcome-subtitle">Ask a question, explore an idea, or get help with something you're working on.</p>
+
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain artificial intelligence in simple words."><span>✧</span><b>Learn something</b><small>Explain AI in simple words</small></button>
+            <button class="suggestion" data-prompt="Give me a creative project idea for a college student."><span>⌁</span><b>Get inspired</b><small>Find a creative project idea</small></button>
+            <button class="suggestion" data-prompt="Create a simple study plan for learning JavaScript."><span>▤</span><b>Make a plan</b><small>Build a JavaScript study plan</small></button>
+            <button class="suggestion" data-prompt="Write a short and professional email asking for information."><span>✉</span><b>Write something</b><small>Draft a professional email</small></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" placeholder="Message Nova..." aria-label="Type your message"></textarea>
+          <div class="composer-bottom">
+            <span class="input-hint">↵ Enter to send · Shift + Enter for a new line</span>
+            <button class="send-btn" id="sendBtn" type="submit" aria-label="Send message">↑</button>
+          </div>
+        </form>
+        <p class="disclaimer">Nova is a frontend demo. Responses are simulated and may not always be accurate.</p>
+      </footer>
+    </main>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
